@@ -1,5 +1,5 @@
 <template>
-	<div :class="containerClass" @click="onWrapperClick">
+	<!-- <div :class="containerClass" @click="onWrapperClick">
 		<AppTopBar @menu-toggle="onMenuToggle" />
 
         <transition name="layout-sidebar">
@@ -15,19 +15,19 @@
             </div>
         </transition>
 
-		<div class="layout-main">
+		<div class="layout-main"> -->
 			<router-view />
-		</div>
+		<!-- </div> -->
 
-		<AppFooter />
-	</div>
+		<!-- <AppFooter /> -->
+	<!-- </div> -->
 </template>
 
 <script>
-import AppTopBar from './AppTopbar.vue';
-import AppProfile from './AppProfile.vue';
-import AppMenu from './AppMenu.vue';
-import AppFooter from './AppFooter.vue';
+// import AppTopBar from './AppTopbar.vue';
+// import AppProfile from './AppProfile.vue';
+// import AppMenu from './AppMenu.vue';
+// import AppFooter from './AppFooter.vue';
 
 export default {
     data() {
@@ -219,12 +219,12 @@ export default {
         else
             this.removeClass(document.body, 'body-overflow-hidden');
     },
-    components: {
-        'AppTopBar': AppTopBar,
-        'AppProfile': AppProfile,
-        'AppMenu': AppMenu,
-        'AppFooter': AppFooter,
-    }
+    // components: {
+    //     'AppTopBar': AppTopBar,
+    //     'AppProfile': AppProfile,
+    //     'AppMenu': AppMenu,
+    //     'AppFooter': AppFooter,
+    // }
 }
 </script>
 

@@ -61,10 +61,10 @@ export default {
   methods: {
     register() {
       this.$refs.loadingButton.startLoading();
-      const { name, email, password } = this;
-      this.$store
-        .dispatch(AUTH_SIGNUP, { name, email, password })
-        .then(() => {
+      // const { name, email, password } = this;
+      // this.$store
+        // .dispatch(AUTH_SIGNUP, { name, email, password })
+        // .then(() => {
           this.$refs.loadingButton.stopLoading();
           this.$snack.success({
             text:
@@ -73,13 +73,13 @@ export default {
               ". Please log in to continue."
           });
           this.$router.push("/");
-        })
-        .catch(error => {
-          this.$refs.loadingButton.stopLoading();
-          this.$snack.danger({
-            text: error.message
-          });
-        });
+        // })
+        // .catch(error => {
+        //   this.$refs.loadingButton.stopLoading();
+        //   this.$snack.danger({
+        //     text: error.message
+        //   });
+        // });
     }
   },
   mounted() {
