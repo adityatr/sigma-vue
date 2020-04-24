@@ -1,4 +1,5 @@
 import Vue from 'vue';
+import store from "./store";
 import App from './App.vue';
 import router from './router';
 import AutoComplete from 'primevue/autocomplete';
@@ -64,6 +65,10 @@ import Tree from 'primevue/tree';
 import TreeTable from 'primevue/treetable';
 import TriStateCheckbox from 'primevue/tristatecheckbox';
 import ValidationMessage from 'primevue/validationmessage';
+import UIkit from "uikit";
+import Icons from "uikit/dist/js/uikit-icons";
+import ButtonSpinner from "@/components/globals/ButtonSpinner";
+import VueSnackbar from "vue-snack";
 
 import 'primevue/resources/themes/nova-light/theme.css';
 import 'primevue/resources/primevue.min.css';
@@ -142,7 +147,25 @@ Vue.component('TreeTable', TreeTable);
 Vue.component('TriStateCheckbox', TriStateCheckbox);
 Vue.component('ValidationMessage', ValidationMessage);
 
+UIkit.use(Icons);
+window.UIkit = UIkit;
+
+// loads the Icon plugin
+window._ = require("lodash");
+
+require("./styles/index.scss");
+require("vue-snack/dist/vue-snack.min.css");
+
+Vue.config.productionTip = false;
+
+window.Event = new Vue();
+
+Vue.use(VueSnackbar, {});
+
+Vue.component("button-spinner", ButtonSpinner);
+
 new Vue({
 	router,
+	store,
 	render: h => h(App)
 }).$mount('#app');
