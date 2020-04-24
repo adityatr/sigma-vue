@@ -48,7 +48,7 @@
 
 <script>
 import img from "./img/register.jpg";
-import { AUTH_SIGNUP } from "@/store/actions/auth";
+// import { AUTH_SIGNUP } from "@/store/actions/auth";
 export default {
   data() {
     return {
