@@ -28,6 +28,7 @@ const actions = {
       // apiCall({ url: api_routes.user.login, data: user, method: "post" })
       // .then(resp => {
       try {
+        console.log(user);
         const resp = { token: Math.random() };
         localStorage.setItem("user-token", resp.token);
         // Here set the header of your ajax library to the token value.
