@@ -46,7 +46,7 @@
 
 <script>
 import img from "./img/login.jpg";
-// import { AUTH_REQUEST } from "@/store/actions/auth";
+import { AUTH_REQUEST } from "@/store/actions/auth";
 export default {
   name: "Login",
   data() {
@@ -59,19 +59,19 @@ export default {
   methods: {
     login() {
       this.$refs.loadingButton.startLoading();
-      // const { email, password } = this;
-      // this.$store
-        // .dispatch(AUTH_REQUEST, { email, password })
-        // .then(() => {
+      const { email, password } = this;
+      this.$store
+        .dispatch(AUTH_REQUEST, { email, password })
+        .then(() => {
           this.$refs.loadingButton.stopLoading();
           this.$router.push("/dashboard");
-        // })
-        // .catch(error => {
-        //   this.$refs.loadingButton.stopLoading();
-        //   this.$snack.danger({
-        //     text: error.message
-        //   });
-        // });
+        })
+        .catch(error => {
+          this.$refs.loadingButton.stopLoading();
+          this.$snack.danger({
+            text: error.message
+          });
+        });
     }
   }
 };
